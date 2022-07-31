@@ -1,0 +1,30 @@
+.form-section{
+  margin-bottom: 10rem;
+}
+.example-form {
+  min-width: 100px;
+  max-width: 300px;
+  width: 100%;
+  /* margin-left: 5rem; */
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+/*
+tr:nth-child(even) {
+  background-color: #dddddd;
+} */

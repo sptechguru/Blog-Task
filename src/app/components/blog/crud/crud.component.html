@@ -1,1 +1,84 @@
-<p>crud works!</p>
+<section>
+  <h1> Blog Applications</h1>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <form [formGroup]="blogForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input type="email" matInput formControlName="title" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="blogForm.hasError('email') && !blogForm.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="blogForm.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Descriptions</mat-label>
+          <textarea matInput formControlName="descrption" placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Date</mat-label>
+          <input type="date" matInput formControlName="date" placeholder="Enter Your password">
+          <mat-error *ngIf="blogForm.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status" required>
+            <mat-option *ngFor="let item of status" [value]="item">
+              {{item.staus}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <button *ngIf="btnshow" type="submit" mat-raised-button mat-button color="warn"
+          (click)="onSubmit()">Submit</button>
+
+        <button *ngIf="!btnshow" style="margin-left:10px" type="submit" mat-raised-button mat-button color="primary"
+          (click)="upadatePost()">update</button>
+
+
+      </form>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let item of blogList;">
+          <td>{{item?.id}}</td>
+          <td>{{item?.title}}</td>
+          <td>{{item?.descrption}}</td>
+          <td>{{item?.date}}</td>
+          <td>{{item?.status.staus}}</td>
+          <td>
+            <button type="submit" mat-raised-button mat-button color="primary" (click)="editPost(item)">Edit</button>
+          </td>
+
+          <td>
+            <button style="margin-left: 10px;" type="submit" mat-raised-button mat-button color="warn"
+              (click)="deletePost(item.id)">Delete</button>
+          </td>
+        </tr>
+      </table>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>

@@ -10,32 +10,32 @@ import { ApiHandleService } from 'src/app/service/api-handle.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!:FormGroup;
+  loginForm!: FormGroup;
 
-  constructor(public fb:FormBuilder ,public api:ApiHandleService,
-    public router:Router) { }
+  constructor(public fb: FormBuilder, public api: ApiHandleService,
+    public router: Router) { }
 
   ngOnInit(): void {
     this.intForm();
   }
 
-  intForm(){
+  intForm() {
     this.loginForm = this.fb.group({
-       email: ['',Validators.required, Validators.email],
-       password: ['',Validators.required],
+      email: ['', Validators.required, Validators.email],
+      password: ['', Validators.required],
     })
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.loginForm.value)
     let data = this.loginForm.value;
-    alert("submit");
-    this.api.postMethod('login',data).subscribe((res)=>{
-      console.log(res);
+    // alert("submit");
+    this.api.postMethod('login', data).subscribe((res) => {
+      // console.log(res);
       this.router.navigate(['/blog']);
       this.loginForm.reset();
-    }, error=>{
-      console.log(error)
+    }, error => {
+      // console.log(error)
     })
   }
 

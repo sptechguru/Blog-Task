@@ -52,6 +52,16 @@
       "email": "nagendra123@gmail.com",
       "password": "123456",
       "id": 204
+    },
+    {
+      "email": "neeraj123@gmail.com",
+      "password": "Admin@123",
+      "id": 205
+    },
+    {
+      "email": "demo@gmail.com",
+      "password": "123456",
+      "id": 206
     }
   ],
   "blog": [
@@ -60,7 +70,45 @@
       "title": "title heare",
       "descrption": "content heare",
       "date": "31/07/2022",
-      "status": "active"
+      "status": {
+        "staus": "Active"
+      }
+    },
+    {
+      "id": 202,
+      "title": "title heare 2",
+      "descrption": "content heare",
+      "date": "31/07/2022",
+      "status": {
+        "staus": "Active"
+      }
+    },
+    {
+      "id": 203,
+      "title": "title heare 3",
+      "descrption": "content heare",
+      "date": "31/07/2022",
+      "status": {
+        "staus": "Active"
+      }
+    },
+    {
+      "title": "title heare 4",
+      "descrption": "content heare 2",
+      "date": "2022-07-14",
+      "status": {
+        "staus": "Active"
+      },
+      "id": 204
+    },
+    {
+      "title": "django Devloper",
+      "descrption": "test content ",
+      "date": "2022-07-21",
+      "status": {
+        "staus": "Inctive"
+      },
+      "id": 205
     }
   ]
 }

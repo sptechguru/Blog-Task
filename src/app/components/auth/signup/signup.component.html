@@ -1,74 +1,72 @@
-
 <section class="form-section">
   <mat-card>
-  <h1>Signup Page</h1>
-  <form [formGroup]="signupForm" class="example-form" (ngSubmit)="onSubmit()">
+    <h1>Signup Page</h1>
+    <form [formGroup]="signupForm" class="example-form" (ngSubmit)="onSubmit()">
 
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>First Name</mat-label>
-      <input type="text" matInput formControlName="firstname" placeholder="Enter Your First Name">
-      <mat-error *ngIf="signupForm.hasError('required')">
-        First Name is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br/>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="firstname" placeholder="Enter Your First Name">
+        <mat-error *ngIf="signupForm.hasError('required')">
+          First Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
 
 
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Last Name</mat-label>
-      <input type="email" matInput formControlName="lastname" placeholder="Ex. pat@example.com">
-      <mat-error *ngIf="signupForm.hasError('required')">
-        Last Name is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br/>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input type="email" matInput formControlName="lastname" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="signupForm.hasError('required')">
+          Last Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
 
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
-      <mat-error *ngIf="signupForm.hasError('email') && !signupForm.hasError('required')">
-        Please enter a valid email address
-      </mat-error>
-      <mat-error *ngIf="signupForm.hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br/>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="signupForm.hasError('email') && !signupForm.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signupForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
 
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Password</mat-label>
-      <input type="password" matInput formControlName="password" placeholder="Enter Your password">
-       <mat-error *ngIf="signupForm.hasError('required')">
-        Password is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br/>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" placeholder="Enter Your password">
+        <mat-error *ngIf="signupForm.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
 
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Dob</mat-label>
-      <input type="date" matInput formControlName="dob">
-       <mat-error *ngIf="signupForm.hasError('required')">
-        Password is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br/>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Dob</mat-label>
+        <input type="date" matInput formControlName="dob">
+        <mat-error *ngIf="signupForm.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
 
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Role</mat-label>
-      <mat-select formControlName="role" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let item of roles" [value]="item">
-          {{item.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option *ngFor="let item of roles" [value]="item">
+            {{item.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-<br/>
+      <br />
 
-    <button type="submit" mat-raised-button mat-button color="warn" [disabled]="signupForm.invalid">Singup</button>
+      <button type="submit" mat-raised-button mat-button color="warn" [disabled]="signupForm.invalid">Singup</button>
 
-    <a style="margin-left: 1rem;" routerLink="/login">Already Have account..?</a>
-  </form>
+      <a style="margin-left: 1rem;" routerLink="/login">Already Have account..?</a>
+    </form>
   </mat-card>
 
-  </section>
+</section>
