@@ -1,0 +1,66 @@
+{
+  "signup": [
+    {
+      "id": 201,
+      "firstname": "Ram",
+      "lastname": "yadav",
+      "email": "ram@gmail.com",
+      "password": "123456",
+      "dob": "14/07/1998",
+      "role": "admin"
+    },
+    {
+      "firstname": "Neeraj",
+      "lastname": "pal",
+      "email": "neeraj@gmail.com",
+      "password": "123456",
+      "dob": "2022-07-21",
+      "role": {
+        "name": "User"
+      },
+      "id": 202
+    },
+    {
+      "firstname": "raj",
+      "lastname": "yadav",
+      "email": "raj@gmail.com",
+      "password": "789456",
+      "dob": "2022-07-16",
+      "role": {
+        "name": "Admin"
+      },
+      "id": 203
+    }
+  ],
+  "login": [
+    {
+      "id": 201,
+      "email": "email@gmail.com",
+      "password": 123456
+    },
+    {
+      "email": "sani@gmail.com",
+      "password": "78456",
+      "id": 202
+    },
+    {
+      "email": "demo@gmail.com",
+      "password": "123456",
+      "id": 203
+    },
+    {
+      "email": "nagendra123@gmail.com",
+      "password": "123456",
+      "id": 204
+    }
+  ],
+  "blog": [
+    {
+      "id": 201,
+      "title": "title heare",
+      "descrption": "content heare",
+      "date": "31/07/2022",
+      "status": "active"
+    }
+  ]
+}

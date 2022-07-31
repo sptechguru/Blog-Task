@@ -1,0 +1,31 @@
+
+<section class="form-section">
+  <mat-card>
+  <h1>Login Page</h1>
+  <form [formGroup]="loginForm" class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="loginForm.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="Enter Your password">
+       <mat-error *ngIf="loginForm.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+    <button type="submit" mat-raised-button mat-button color="warn" [disabled]="loginForm.invalid">Singup</button>
+
+    <a style="margin-left: 1rem;" routerLink="/signup">Create a New Account..??</a>
+  </form>
+  </mat-card>
+
+  </section>
