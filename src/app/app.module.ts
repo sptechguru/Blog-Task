@@ -16,6 +16,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ToastrModule } from 'ngx-toastr';
+import { CreatePostComponent } from './components/blog/crud/create-post/create-post.component';
 
 
 
@@ -25,12 +28,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
     LoginComponent,
     SignupComponent,
     CrudComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CreatePostComponent,
   ],
   imports: [
   BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -39,7 +44,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
 
   ],
   providers: [ApiHandleService],

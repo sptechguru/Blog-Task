@@ -30,6 +30,28 @@
         "name": "Admin"
       },
       "id": 203
+    },
+    {
+      "firstname": "suraj",
+      "lastname": "pal",
+      "email": "pal@gmail.com",
+      "password": "456123",
+      "dob": "2022-07-28",
+      "role": {
+        "name": "User"
+      },
+      "id": 204
+    },
+    {
+      "firstname": "santosh",
+      "lastname": "pal",
+      "email": "santoshpal@gmail.com",
+      "password": "456123",
+      "dob": "2022-07-15",
+      "role": {
+        "name": "User"
+      },
+      "id": 205
     }
   ],
   "login": [
@@ -65,24 +87,6 @@
     }
   ],
   "blog": [
-    {
-      "id": 201,
-      "title": "title heare",
-      "descrption": "content heare",
-      "date": "31/07/2022",
-      "status": {
-        "staus": "Active"
-      }
-    },
-    {
-      "id": 202,
-      "title": "title heare 2",
-      "descrption": "content heare",
-      "date": "31/07/2022",
-      "status": {
-        "staus": "Active"
-      }
-    },
     {
       "id": 203,
       "title": "title heare 3",

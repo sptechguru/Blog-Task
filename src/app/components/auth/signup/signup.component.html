@@ -6,17 +6,18 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>First Name</mat-label>
         <input type="text" matInput formControlName="firstname" placeholder="Enter Your First Name">
-        <mat-error *ngIf="signupForm.hasError('required')">
+        <mat-error  *ngIf="!signupForm.controls['firstname'].valid &&
+        signupForm.controls['firstname']?.touched">
           First Name is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <br />
 
-
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Last Name</mat-label>
         <input type="email" matInput formControlName="lastname" placeholder="Ex. pat@example.com">
-        <mat-error *ngIf="signupForm.hasError('required')">
+        <mat-error *ngIf="!signupForm.controls['lastname'].valid &&
+        signupForm.controls['lastname']?.touched">
           Last Name is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -28,7 +29,8 @@
         <mat-error *ngIf="signupForm.hasError('email') && !signupForm.hasError('required')">
           Please enter a valid email address
         </mat-error>
-        <mat-error *ngIf="signupForm.hasError('required')">
+        <mat-error *ngIf="!signupForm.controls['email'].valid &&
+        signupForm.controls['email']?.touched">
           Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -37,7 +39,8 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Password</mat-label>
         <input type="password" matInput formControlName="password" placeholder="Enter Your password">
-        <mat-error *ngIf="signupForm.hasError('required')">
+        <mat-error *ngIf="!signupForm.controls['password'].valid &&
+        signupForm.controls['password']?.touched">
           Password is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -46,8 +49,9 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Dob</mat-label>
         <input type="date" matInput formControlName="dob">
-        <mat-error *ngIf="signupForm.hasError('required')">
-          Password is <strong>required</strong>
+        <mat-error *ngIf="!signupForm.controls['dob'].valid &&
+        signupForm.controls['dob']?.touched">
+          Dob is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <br />
@@ -59,6 +63,10 @@
             {{item.name}}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="!signupForm.controls['role'].valid &&
+        signupForm.controls['role']?.touched">
+        Role is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
 
       <br />

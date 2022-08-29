@@ -8,7 +8,8 @@
         <mat-error *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')">
           Please enter a valid email address
         </mat-error>
-        <mat-error *ngIf="loginForm.hasError('required')">
+        <mat-error *ngIf="!loginForm.controls['email'].valid &&
+        loginForm.controls['email']?.touched">
           Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -16,12 +17,13 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Password</mat-label>
         <input type="password" matInput formControlName="password" placeholder="Enter Your password">
-        <mat-error *ngIf="loginForm.hasError('required')">
-          Password is <strong>required</strong>
+        <mat-error *ngIf="!loginForm.controls['password'].valid &&
+        loginForm.controls['password']?.touched">
+        Password is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <br />
-      <button type="submit" mat-raised-button mat-button color="warn" [disabled]="loginForm.invalid">Singup</button>
+      <button type="submit" mat-raised-button mat-button color="warn" [disabled]="loginForm.invalid">Login</button>
 
       <a style="margin-left: 1rem;" routerLink="/signup">Create a New Account..??</a>
     </form>

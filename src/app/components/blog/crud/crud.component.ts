@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiHandleService } from 'src/app/service/api-handle.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CreatePostComponent } from './create-post/create-post.component';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -28,7 +30,14 @@ export class CrudComponent implements OnInit {
   ]
 
   constructor(public fb: FormBuilder, public api: ApiHandleService,
-    public router: Router) { }
+    public router: Router ,public dialog: MatDialog) { }
+
+    openDialog() {
+      const dialogRef = this.dialog.open(CreatePostComponent);
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
 
   ngOnInit(): void {
     this.intForm();

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ApiHandleService } from 'src/app/service/api-handle.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
   ]
 
   constructor(public fb: FormBuilder, public api: ApiHandleService,
-    public router: Router) { }
+    public router: Router ,public toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.intForm();
@@ -37,15 +38,14 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.signupForm.value)
     let data = this.signupForm.value;
-    // alert("submit");
+    console.log(data)
     this.api.postMethod('signup', data).subscribe((res) => {
-      // console.log(res);
+      this.toastr.success('Signup is Succefullly.!');
       this.router.navigate(['/blog']);
       this.signupForm.reset();
     }, error => {
-      // console.log(error)
+      this.toastr.error('server Error',error);
     })
   }
 
